@@ -2,72 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Mental Health Support</title>
+    <title>Mental Health Support System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Virtual Mental Health Support</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#appointment">Appointment</a></li>
-                <li><a href="#chat">Chat</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="home">
-        <h2>Welcome to AI-Enhanced Mental Health Support</h2>
-        <p>Providing 24/7 AI-driven mental health support and real-time teletherapy.</p>
-    </section>
-    
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>AI-Powered Chatbot Support</li>
-            <li>Real-Time Teletherapy with Licensed Professionals</li>
-            <li>Doctor Onboarding for Live Consultations</li>
-        </ul>
-    </section>
-    
-    <section id="appointment">
-        <h2>Book an Appointment</h2>
-        <p>Schedule a session with our licensed professionals for personalized support.</p>
-        <form id="appointmentForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <input type="date" id="date" required>
-            <button type="submit">Book Now</button>
-        </form>
-        <p id="appointmentMessage"></p>
-    </section>
-    
-    <section id="chat">
-        <h2>Live Chat Support</h2>
-        <p>Chat with our AI-powered chatbot or connect with a professional.</p>
-        <button onclick="toggleChat()">Start Chat</button>
-        <div id="chatBox" class="hidden">
-            <p>Chatbot: How can I assist you today?</p>
-            <input type="text" id="chatInput" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-            <div id="chatMessages"></div>
-        </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: support@mentalhealthai.com</p>
-        <p>Phone: +91 9876543210</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Virtual Mental Health Support | All Rights Reserved</p>
-    </footer>
 
-    <script src="script.js"></script>
+<header>
+    <h1>Mental Health Support System</h1>
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</header>
+
+<!-- Mood Tracker -->
+<section>
+    <h2>Daily Mood Tracker</h2>
+    <select id="moodSelect">
+        <option value="">Select Mood</option>
+        <option value="Happy">😊 Happy</option>
+        <option value="Neutral">😐 Neutral</option>
+        <option value="Sad">😞 Sad</option>
+        <option value="Anxious">😰 Anxious</option>
+    </select>
+    <button onclick="saveMood()">Save Mood</button>
+
+    <h3>Mood History</h3>
+    <div id="moodHistory"></div>
+
+    <h3>Wellness Score</h3>
+    <progress id="wellnessBar" value="50" max="100"></progress>
+    <p id="wellnessText"></p>
+</section>
+
+<!-- Stress Checker -->
+<section>
+    <h2>Stress Level Checker</h2>
+    <input type="number" id="stressInput" placeholder="Rate stress (1-10)">
+    <button onclick="checkStress()">Check</button>
+    <p id="stressResult"></p>
+</section>
+
+<!-- Appointment -->
+<section>
+    <h2>Book Appointment</h2>
+    <form id="appointmentForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <input type="date" id="date">
+        <button type="submit">Book Now</button>
+    </form>
+    <p id="appointmentMessage"></p>
+</section>
+
+<!-- Chat -->
+<section>
+    <h2>Chat Support</h2>
+    <div id="chatBox">
+        <div id="chatMessages"></div>
+        <input type="text" id="chatInput" placeholder="Type message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</section>
+
+<!-- Journal -->
+<section>
+    <h2>Private Journal</h2>
+    <textarea id="journalText" rows="4" placeholder="Write your thoughts..."></textarea>
+    <button onclick="saveJournal()">Save Entry</button>
+    <p id="journalMessage"></p>
+</section>
+
+<!-- Breathing -->
+<section>
+    <h2>Breathing Exercise</h2>
+    <p id="breathingText">Click Start</p>
+    <button onclick="startBreathing()">Start</button>
+</section>
+
+<!-- Focus Timer -->
+<section>
+    <h2>Focus Timer</h2>
+    <p id="timer">25:00</p>
+    <button onclick="startTimer()">Start</button>
+</section>
+
+<!-- Self Care Planner -->
+<section>
+    <h2>Self-Care Planner</h2>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+</section>
+
+<!-- Quotes -->
+<section>
+    <h2>Daily Motivation</h2>
+    <p id="quoteText">Click below</p>
+    <button onclick="generateQuote()">Get Quote</button>
+</section>
+
+<button onclick="clearData()">Reset All Data</button>
+
+<script src="script.js"></script>
 </body>
 </html>
