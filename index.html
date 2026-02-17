@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Mental Health Support</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Virtual Mental Health Support</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+                <li><a href="#chat">Chat</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to AI-Enhanced Mental Health Support</h2>
+        <p>Providing 24/7 AI-driven mental health support and real-time teletherapy.</p>
+    </section>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>AI-Powered Chatbot Support</li>
+            <li>Real-Time Teletherapy with Licensed Professionals</li>
+            <li>Doctor Onboarding for Live Consultations</li>
+        </ul>
+    </section>
+    
+    <section id="appointment">
+        <h2>Book an Appointment</h2>
+        <p>Schedule a session with our licensed professionals for personalized support.</p>
+        <form id="appointmentForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="date" id="date" required>
+            <button type="submit">Book Now</button>
+        </form>
+        <p id="appointmentMessage"></p>
+    </section>
+    
+    <section id="chat">
+        <h2>Live Chat Support</h2>
+        <p>Chat with our AI-powered chatbot or connect with a professional.</p>
+        <button onclick="toggleChat()">Start Chat</button>
+        <div id="chatBox" class="hidden">
+            <p>Chatbot: How can I assist you today?</p>
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+            <div id="chatMessages"></div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@mentalhealthai.com</p>
+        <p>Phone: +91 9876543210</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Virtual Mental Health Support | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
